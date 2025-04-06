@@ -70,8 +70,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/backoffice/src/environments/environment.ts",
+                  "with": "projects/backoffice/src/environments/environment.prod.ts"
                 }
               ],
               "budgets": [

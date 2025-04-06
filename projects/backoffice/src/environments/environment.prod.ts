@@ -1,6 +1,6 @@
 export const environment = {
   production: true, // Indicates that this is the production environment
-  apiUrl: 'http://localhost:8085/api/v1', // Development API endpoint
+  apiUrl: process.env['PROD_API_URL'] || '', // Production API endpoint
   requests: {
     reportCardPaginated: {
       endpoint: '',
