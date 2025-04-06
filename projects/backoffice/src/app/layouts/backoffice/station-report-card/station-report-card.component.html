@@ -1,0 +1,49 @@
+<mat-card
+  class="report_card"
+  appearance="raised"
+  [ngClass]="{
+    active: displayReport(item).id === attributeOfSelection,
+    inactive: displayReport(item).id !== attributeOfSelection
+  }"
+>
+  <mat-card-header class="report_card_header">
+    <mat-card-title>{{ displayReport(item).title }}</mat-card-title>
+    <mat-card-subtitle>{{
+      displayReport(item).subtitle || "..."
+    }}</mat-card-subtitle>
+    <mat-card-actions>
+      <button
+        mat-mini-fab
+        class="report_card_btn"
+        [ngClass]="{
+          active: displayReport(item).id === attributeOfSelection
+        }"
+        (click)="isSelectedStation()"
+      >
+        <mat-icon class="report_card_icon">arrow_forward</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card-header>
+  <mat-card-content align="end" class="report_card_content">
+    <div>
+      <strong class="report_card_details">{{
+        "report-card.nbr-of-report" | translate
+      }}</strong>
+      <p class="report_card_total_reports report_card_details_value">
+        {{ displayReport(item).totalReport }}
+
+        {{ "report-card.reports" | translate }}
+      </p>
+    </div>
+    @for(detail of displayReport(item).details; track $index) {
+    <div>
+      <strong class="report_card_details">{{
+        detail.title | translate
+      }}</strong>
+      <p class="report_card_details_value">
+        {{ detail.date | date }}
+      </p>
+    </div>
+    }
+  </mat-card-content>
+</mat-card>

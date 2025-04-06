@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  gap: 0.25rem;
+  height: 100%;
+  width: 100%;
+}
+
+mat-divider {
+  --mat-divider-color: var(--color-primary);
+  --mat-divider-width: 1px;
+  margin-block: 1rem;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.right {
+  flex-basis: 60%;
+}
+
+.left {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow-y: scroll;
+  transition: all 0.4s;
+}
+
+.cdk_scroll_viewport {
+  height: 1500px;
+  min-width: 100%;
+}

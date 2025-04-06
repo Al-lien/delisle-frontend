@@ -1,0 +1,26 @@
+:host {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.autocomplete_form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-inline: auto;
+
+  &_field {
+    width: 100%;
+    padding: 0;
+  }
+
+  --mdc-filled-text-field-container-color: var(--color-primary);
+  --mdc-filled-text-field-label-text-color: var(--color-light-text);
+  --mdc-filled-text-field-hover-label-text-color: var(--color-light-text);
+  --mdc-filled-text-field-caret-color: var(--color-neutral);
+  --mdc-filled-text-field-focus-label-text-color: var(--color-neutral);
+  --mdc-filled-text-field-input-text-color: var(--color-light-text);
+  --mat-icon-color: var(--color-light-text);
+}

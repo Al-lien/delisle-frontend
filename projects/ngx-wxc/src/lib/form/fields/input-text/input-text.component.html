@@ -1,0 +1,25 @@
+<mat-form-field>
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    (input)="onTextChange()"
+    [autocomplete]="autocomplete"
+    [formControl]="control"
+    [placeholder]="placeholder"
+    [required]="required"
+    [type]="type"
+  />
+  @if(this.clearButton && this.control.value){
+  <button
+    mat-icon-button
+    mat-suffix
+    type="button"
+    (click)="clear()"
+    [title]="clearButtonTitle"
+  >
+    <mat-icon>{{ matIcon }}</mat-icon>
+  </button>
+  } @for (error of control.errors| keyvalue; track $index) {
+  <mat-error>{{ getError(error.key) | async }}</mat-error>
+  }
+</mat-form-field>

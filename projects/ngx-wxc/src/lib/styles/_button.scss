@@ -1,0 +1,77 @@
+.mdc-button {
+  border-radius: 8px !important;
+
+  &:disabled {
+    opacity: 0.5 !important;
+  }
+
+  &.info {
+    --mdc-protected-button-label-text-color: var(--color-light-text);
+    --mdc-protected-button-container-color: var(--color-info);
+  }
+
+  &.primary {
+    --mdc-protected-button-label-text-color: var(--color-light-text);
+    --mdc-protected-button-container-color: var(--color-primary-dark);
+  }
+
+  &.success {
+    --mdc-protected-button-label-text-color: var(--color-light-text);
+    --mdc-protected-button-container-color: var(--color-success);
+  }
+
+  &.neutral {
+    --mdc-protected-button-label-text-color: var(--color-light-text);
+    --mdc-protected-button-container-color: var(--color-neutral);
+  }
+
+  &.accent-variant {
+    --mdc-protected-button-label-text-color: var(--color-light-text);
+    --mdc-protected-button-container-color: var(--color-accent-variant);
+  }
+
+  &.stroked {
+    &.info {
+      --mdc-outlined-button-outline-color: var(--color-info);
+
+      &:hover {
+        --mdc-outlined-button-outline-color: var(--color-info);
+        --mdc-outlined-button-label-text-color: var(--color-light-text);
+        --mat-outlined-button-hover-state-layer-opacity: 1;
+        --mat-outlined-button-state-layer-color: var(--color-info);
+      }
+    }
+
+    &.primary-dark {
+      --mdc-outlined-button-outline-color: var(--color-primary-dark);
+
+      &:hover {
+        --mdc-outlined-button-outline-color: var(--color-primary-dark);
+        --mdc-outlined-button-label-text-color: var(--color-light-text);
+        --mat-outlined-button-hover-state-layer-opacity: 1;
+        --mat-outlined-button-state-layer-color: var(--color-primary-dark);
+      }
+    }
+
+    &.primary {
+      --mdc-outlined-button-outline-color: var(--color-primary);
+      --mdc-protected-button-container-color: var(--color-light-text);
+
+      &:hover {
+        --mdc-outlined-button-outline-color: var(--color-primary);
+        --mdc-outlined-button-label-text-color: var(--color-light-text);
+        --mat-outlined-button-hover-state-layer-opacity: 1;
+        --mat-outlined-button-state-layer-color: var(--color-primary);
+      }
+    }
+
+    &.accent {
+      --mdc-outlined-button-outline-color: var(--color-accent);
+
+      &:hover {
+        --mdc-outlined-button-label-text-color: var(--color-light-text);
+        --mat-outlined-button-hover-state-layer-opacity: 1;
+      }
+    }
+  }
+}

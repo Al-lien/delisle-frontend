@@ -1,0 +1,64 @@
+<!-- HEADER -->
+<ngx-wxc-app-header>{{ intervention }}</ngx-wxc-app-header>
+
+<div class="go_back_container">
+  <!-- GO BACK BUTTON -->
+  <button
+    class="go_back_container_btn"
+    mat-mini-fab
+    aria-label="Example icon button with a home icon"
+    (click)="goBack()"
+  >
+    <mat-icon class="go_back_container_icon">arrow_back</mat-icon>
+  </button>
+
+  <!-- REPORT BUTTON -->
+  <button
+    class="go_back_container_btn"
+    mat-mini-fab
+    aria-label="Example icon button with a home icon"
+    (click)="reportIssue()"
+  >
+    <mat-icon class="go_back_container_icon">settings</mat-icon>
+  </button>
+</div>
+<main class="intervention_details">
+  <!-- STATION'S NAME DETAILS -->
+  <section class="intervention_details_station">
+    <div class="intervention_details_station_labels">
+      <h3>{{ intervention?.station?.name }}</h3>
+      <small>{{ intervention?.station?.address }}</small>
+      <small>{{ intervention?.station?.commune }}</small>
+    </div>
+  </section>
+  <!-- OPERATIONS SECTION -->
+  <section class="intervention_details_operation">
+    <h4>{{ "intervention-details.sections.titles.operations" | translate }}</h4>
+    <ngx-wxc-toggle-group
+      [group]="operationControls"
+      [displayFormControlName]="onToggleFormControlName"
+    ></ngx-wxc-toggle-group>
+  </section>
+  <!-- ALLOCATED TIMESPAN -->
+  <section class="intervention_details_timespan">
+    <h4>{{ "intervention-details.sections.titles.timespan" | translate }}</h4>
+    <ngx-wxc-progress-bar
+      [value]="displayRemainingTime(intervention).remainingTimePercentage"
+      [startLabel]="intervention?.startsAt | date"
+      [endLabel]="intervention?.endsAt | date"
+    ></ngx-wxc-progress-bar>
+  </section>
+  <!-- LOCATION -->
+  <section class="intervention_details_location">
+    <h4>{{ "intervention-details.sections.titles.location" | translate }}</h4>
+    <ngx-wxc-map id="ol-map" [map]="map"></ngx-wxc-map>
+  </section>
+  <!-- INFO -->
+  <section class="intervention_details_info">
+    <small>{{ "intervention-details.sections.info" | translate }}</small>
+  </section>
+  <!-- RESOLVED BUTTON -->
+  <section class="intervention_details_resolved">
+    <ngx-wxc-button-submit>Marquer comme résolue</ngx-wxc-button-submit>
+  </section>
+</main>

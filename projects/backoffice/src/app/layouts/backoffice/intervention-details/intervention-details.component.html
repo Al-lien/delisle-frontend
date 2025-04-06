@@ -1,0 +1,42 @@
+<div class="details_section technician_section">
+  <h2>
+    {{ "backoffice-card.intervention-form.problems-to-solve" | translate }}
+  </h2>
+  <ngx-wxc-simple-card
+    [img]="profilPic"
+    [appearance]="'raised'"
+    [base64]="true"
+    [subtitle]="
+      intervention()?.technician?.firstname +
+      ' ' +
+      intervention()?.technician?.lastname
+    "
+    x
+  ></ngx-wxc-simple-card>
+</div>
+<div class="details_section">
+  <h2>
+    {{ "backoffice-card.intervention-form.problems-to-solve" | translate }}
+  </h2>
+  <ngx-wxc-toggle-group
+    [group]="operations"
+    [displayFormControlName]="onToggleFormControlName"
+  ></ngx-wxc-toggle-group>
+</div>
+<div class="details_section">
+  <h2>{{ "intervention-card.allocated-timespan" | translate }}</h2>
+  <ngx-wxc-progress-bar
+    [value]="displayRemainingTime(intervention()).remainingTimePercentage"
+    [startLabel]="intervention()?.startsAt | date"
+    [endLabel]="intervention()?.endsAt | date"
+  ></ngx-wxc-progress-bar>
+</div>
+<div class="details_section">
+  <h2>{{ "backoffice-card.sections.location.title" | translate }}</h2>
+  <app-map
+    id="ol-map"
+    [map]="map"
+    [selectedItem$]="intervention"
+    [displayCoordinates]="displayCoordinates"
+  ></app-map>
+</div>

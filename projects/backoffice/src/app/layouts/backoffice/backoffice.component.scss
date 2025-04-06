@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+}
+
+.sidenav_container {
+  position: absolute;
+  inset: 0;
+
+  &_body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+  }
+}
+
+.sidenav_content {
+  overflow: hidden;
+}

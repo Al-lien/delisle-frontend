@@ -1,0 +1,32 @@
+.mdc-list {
+  padding: 0 !important;
+  --mat-list-active-indicator-shape: 0;
+  --mdc-list-list-item-focus-state-layer-color: transparent;
+  --mdc-list-list-item-hover-state-layer-color: var(--color-accent);
+  --mat-ripple-color: rgba(226, 6, 18, 0.1);
+  --mdc-list-list-item-hover-state-layer-opacity: 0.05;
+
+  a.active-link {
+    border-left: 3px solid var(--color-warn);
+  }
+
+  a:hover:not(a.active-link) {
+    border-left: 3px solid rgba(176, 0, 32, 0.25);
+  }
+
+  mat-icon.active-link {
+    color: var(--color-accent) !important;
+  }
+}
+
+.active-link.mdc-list-item .mdc-list-item__primary-text {
+  color: var(--color-accent) !important;
+}
+
+.mdc-list-item.active-link {
+  --mdc-list-list-item-container-color: rgba(226, 6, 18, 0.1);
+
+  &:hover {
+    --mdc-list-list-item-hover-state-layer-color: transparent;
+  }
+}

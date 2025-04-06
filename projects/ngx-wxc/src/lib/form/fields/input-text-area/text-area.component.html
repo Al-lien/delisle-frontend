@@ -1,0 +1,18 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ placeholder }}</mat-label>
+  <textarea
+    matInput
+    [formControl]="control"
+    [cdkTextareaAutosize]="autosize"
+    [cdkAutosizeMinRows]="minRows"
+    [cdkAutosizeMaxRows]="maxRows"
+    [required]="required"
+  ></textarea>
+  <mat-hint>{{ hint }}</mat-hint>
+
+  @for(error of control.errors | keyvalue; track $index){
+  <mat-error *ngIf="control.touched">
+    {{ getError(error.key) | async }}</mat-error
+  >
+  }
+</mat-form-field>

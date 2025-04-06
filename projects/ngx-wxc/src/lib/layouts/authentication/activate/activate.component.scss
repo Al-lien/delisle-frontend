@@ -1,0 +1,114 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+}
+
+.response_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 650px;
+  margin-inline: auto;
+
+  .response_container_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.body-container {
+  height: calc(100% - var(--mat-toolbar-mobile-height));
+  margin-top: var(--mat-toolbar-mobile-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 650px;
+  margin-inline: auto;
+  padding: 0.5rem;
+}
+
+@media (width > 599px) {
+  .body-container {
+    height: calc(100% - var(--mat-toolbar-standard-height));
+    margin-top: var(--mat-toolbar-standard-height);
+  }
+}
+
+.activate_account_container {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cancel-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  button {
+    width: 80%;
+  }
+}
+
+code-input {
+  padding-right: 0.9rem !important;
+  padding-left: calc(0.9rem - (var(--item-spacing) / 2)) !important;
+  --item-spacing: 10px !important; // Horizontal space between input items
+  --item-height: 7.25rem; //	Height of input items
+  /* -item-border: 1px solid #dddddd; 	Border of input item for an empty value */
+  --item-border-bottom: 2px solid #dddddd; // Bottom border of input item for an empty value
+  --item-border-has-value: 2px solid var(--color); // Border of input item with a value
+  --item-border-bottom-has-value: 2px solid var(--color); // Border of input item with a value
+  --item-border-focused: 2px solid var(--color); // Border of input item when focused
+  --item-border-bottom-focused: 2px solid var(--color); // Bottom border of input item when focused
+  --item-shadow-focused: 2px solid var(--color); // Shadow of input item when focused
+  /* --item-border-radius: 5px; 	Border radius of input item */
+  /* --item-background: transparent; 	Input item background */
+  /* --item-font-weight: 300; 	Font weight of input item */
+  --item-border-radius: 0px;
+  --color: #415971;
+  font-size: 1.5rem;
+
+  span.empty:first-child {
+    padding-left: 0 !important;
+  }
+}
+
+mat-hint.mat-mdc-form-field-hint-end {
+  order: 0;
+  margin: 0.5rem 1rem 0 auto;
+}
+
+.hint-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--color-primary);
+}
+
+button.info.stroked {
+  color: var(--color-primary) !important;
+
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+.activate_spinner {
+  position: absolute;
+  top: 15%;
+}

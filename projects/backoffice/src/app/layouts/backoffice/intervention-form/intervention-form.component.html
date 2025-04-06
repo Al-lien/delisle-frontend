@@ -1,0 +1,72 @@
+<form [formGroup]="interventionForm">
+  <div class="select_timelapse_container">
+    <!-- TECHNICIAN SECTION -->
+    <div class="select_container">
+      <h3>
+        {{
+          "backoffice-card.intervention-form.selected-technician" | translate
+        }}
+      </h3>
+      <ngx-wxc-select
+        [control]="technician"
+        [values]="displayedTechnicians"
+        [attributeDisplay]="'fullname'"
+        [label]="
+          'backoffice-card.intervention-form.selected-technician' | translate
+        "
+        [matIcon]="'account_circle'"
+        [errorPath]="
+          'backoffice-card.intervention-form.errors.select-technician'
+        "
+      ></ngx-wxc-select>
+    </div>
+
+    <!-- TIMELAPSE SECTION -->
+    <div class="timelapse_container">
+      <h3>
+        {{ "backoffice-card.intervention-form.allocated-timespan" | translate }}
+
+        <mat-icon
+          color="primary"
+          [matTooltip]="
+            'backoffice-card.intervention-form.date-picker-tooltip' | translate
+          "
+          [matTooltipPosition]="'right'"
+          >info</mat-icon
+        >
+      </h3>
+      <ngx-wxc-date-picker
+        [group]="timelapse"
+        [required]="true"
+        [cancelBtn]="'backoffice-card.intervention-form.cancel' | translate"
+        [applyBtn]="'backoffice-card.intervention-form.apply' | translate"
+        [dateFormat]="false"
+      ></ngx-wxc-date-picker>
+    </div>
+  </div>
+  <!-- OPERATION SECTION -->
+  <div class="operations_container">
+    <h3>
+      {{ "backoffice-card.intervention-form.problems-to-solve" | translate }}
+    </h3>
+
+    <ngx-wxc-toggle-group
+      [group]="operations"
+      [displayFormControlName]="onToggleFormControlName"
+    ></ngx-wxc-toggle-group>
+  </div>
+  <!-- COMMENT SECTION -->
+  <div class="description_container">
+    <h3>
+      {{ "backoffice-card.intervention-form.comment-instruction" | translate }}
+    </h3>
+    <ngx-wxc-text-area
+      [placeholder]="
+        'backoffice-card.intervention-form.comment-instruction' | translate
+      "
+      [control]="description"
+      [maxRows]="10"
+      [errorPath]="'backoffice-card.intervention-form.errors.description'"
+    ></ngx-wxc-text-area>
+  </div>
+</form>

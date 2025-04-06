@@ -1,0 +1,24 @@
+mat-tab-nav-panel.mat-mdc-tab-nav-panel {
+  height: calc(
+    100vh - var(--mdc-secondary-navigation-tab-container-height)
+  ) !important;
+  display: flex;
+}
+
+nav.mat-mdc-tab-nav-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+mat-icon.active-link {
+  color: var(--color-accent) !important;
+}
+
+@media (width > 599px) {
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    height: calc(100% - var(--mat-toolbar-standard-height) * 2);
+    margin-block: var(--mat-toolbar-standard-height);
+  }
+}

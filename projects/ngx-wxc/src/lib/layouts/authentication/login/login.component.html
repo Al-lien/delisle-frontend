@@ -1,0 +1,29 @@
+<form [ariaLabel]="'connect' | translate">
+  <ngx-wxc-input-text
+    type="email"
+    [control]="emailControl"
+    [errorPath]="'user-form-errors.email'"
+    [label]="'user-form.email' | translate"
+    [placeholder]="'user-form.email' | translate"
+  ></ngx-wxc-input-text>
+
+  <ngx-wxc-input-password
+    [ariaLabel]="'user-form-aria.hide-show-password' | translate"
+    [control]="passwordControl"
+    [errorPath]="'user-form-errors.password'"
+    [hintLabel]="'user-form-errors.password.forgotten' | translate"
+    [label]="'user-form.password' | translate"
+    [placeholder]="'user-form.password' | translate"
+  ></ngx-wxc-input-password>
+
+  <ngx-wxc-slide-toggle
+    [control]="rememberMe"
+    [label]="'user-form.remember-me' | translate"
+  >
+  </ngx-wxc-slide-toggle>
+</form>
+<ngx-wxc-button-submit
+  [disabled]="loginUserForm && loginUserForm.invalid"
+  [label]="'login' | translate"
+  (btnClick)="onLogin()"
+></ngx-wxc-button-submit>

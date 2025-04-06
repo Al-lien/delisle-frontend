@@ -1,0 +1,215 @@
+{
+  "username": "nom d'utilisateur",
+  "password": "mot de passe",
+  "register": "Créer un compte",
+  "connect": "Connexion",
+  "login": "Se connecter",
+  "activate-account": "Activer votre compte",
+  "no-account-yet": "Pas encore de compte ?",
+  "google": "Google",
+  "facebook": "Facebook",
+  "apple": "Apple",
+  "dialog": {
+    "title": "Mon titre",
+    "content": "On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).",
+    "close": "annuler",
+    "actions": "confimer"
+  },
+  "user-form": {
+    "firstname": "Prénom",
+    "lastname": "Nom",
+    "email": "Email",
+    "password": "Mot de passe",
+    "repeat-password": "Répéter votre mot de passe",
+    "register": "Je m'inscris",
+    "go-back": "Retour",
+    "remember-me": "Se souvenir de moi",
+    "connect-with": "Ou se connecter avec"
+  },
+  "user-form-errors": {
+    "firstname": {
+      "required": "Veuillez entrer un prénom.",
+      "minlength": "Le prénom doit contenir au moins 2 caractères."
+    },
+    "lastname": {
+      "required": "Veuillez entrer un nom.",
+      "minlength": "Le nom doit contenir au moins 2 caractères."
+    },
+    "email": {
+      "email": "Veuillez entrer une adresse email valide.",
+      "required": "L'email est requis."
+    },
+    "password": {
+      "required": "Le mot de passe est requis.",
+      "match": "Les mots de passes ne correspondent pas.",
+      "must-have": "Le mot de passe doit contenir au moins :",
+      "length": "8 caractères.",
+      "lowercase": "une minuscule.",
+      "uppercase": "une majuscule.",
+      "special": "un caractère spécial (#!$%&@).",
+      "forgotten": "mot de passe oublié ?",
+      "strong": "Veuillez entrer un mot de passe valide."
+    }
+  },
+  "user-form-aria": {
+    "login-tab": "Aller à l'onglet 'Je me connecte",
+    "register-tab": "Aller à l'onglet 'Je m'inscris'",
+    "google": "Se connecter avec Google",
+    "facebook": "Se connecter avec Facebook",
+    "apple": "Se connecter avec Apple",
+    "hide-show-password": "Montrer/Cacher le mot de passe"
+  },
+  "account-activation": {
+    "success": {
+      "title": "Activation confirmée !",
+      "description": "Votre compte vient d'être activé",
+      "description-bis": "Connectez vous afin d'utiliser l'application ainsi que tous ses services.",
+      "description-ter": "Et surtout, profitez bien ;) !",
+      "go-back": "Retour à la page de connexion"
+    },
+    "failure": {
+      "title": "Echec lors de l'activation !",
+      "description": "Il y a eu une erreur lors de l'activation du compte...",
+      "resend": "Recevoir un nouveau code"
+    },
+    "code-input": {
+      "title": "Entrez votre code d'activation",
+      "description": "Un code vous a été envoyé. Vérifiez votre boite mail !",
+      "resend-code": "Renvoyer le code",
+      "cancel": "Annuler",
+      "loading": "Chargement..."
+    },
+    "snackbar": {
+      "resend-code": "Un nouveau code à été envoyé dans votre boite mail!"
+    },
+    "cancel-dialog": {
+      "title": "Annuler l'action en cours ?",
+      "content": "Si vous annulez l'action, vous serez redirigé vers la page d'accueil et votre compte ne sera pas créé. Êtes-vous sûr ?",
+      "close": "rester sur la page",
+      "actions": "retour à l'accueil"
+    }
+  },
+  "intervention-card": {
+    "attribution-date": "Date d'attribution",
+    "deadline": "Date de fin",
+    "allocated-timespan": "Durée de l'opération"
+  },
+  "report-card": {
+    "nbr-of-report": "Nombre de signalement",
+    "reports": "signalement(s)",
+    "last-reports-date": "Dernier signalement"
+  },
+  "backoffice-card": {
+    "create-intervention-btn": "Créer une intervention",
+    "archive-intervention-btn": "Archiver l'intervention",
+    "archive-intervention-details": {
+      "success": "Intervention archivée avec succès !",
+      "error": "Impossible d'archiver l'intervention. Veuillez réessayer plus tard...",
+      "not-found": "L'intervention selectionnée est introuvable. Veuillez réessayer plus tard...",
+      "confirm-dialog": {
+        "title": "Archiver l'intervention",
+        "subtitle": "Êtes-vous sûr ?",
+        "content": "Vous vous apprêtez à archiver une intervention non terminée. Elle ne sera pas supprimée de votre base de données, mais le technicien responsable de cette opération n'y aura plus accès. \nVous pourrez la réactiver plus tard si vous le désirez. Il vous faudra alors l'attribuer de nouveau à un technicien. ",
+        "close": "Annuler",
+        "actions": "Archiver"
+      }
+    },
+    "fetch-station-empty": "Aucune station trouvée...",
+    "loading-spinner": "Chargement...",
+    "request-report-error": "Impossible de récupérer la liste de signalements. Veuillez réessayer plus tard...",
+    "no-data": "Aucune données disponible...",
+    "no-intervention": "Aucune intervention en cours...",
+    "side-menu": {
+      "report": "Signalements",
+      "assigned": "Interventions",
+      "pending": "En attente",
+      "map-view": "Carte",
+      "logout": "déconnexion"
+    },
+    "sections": {
+      "chart": {
+        "title": "Nombre de signalement par type"
+      },
+      "snapshot": {
+        "title": "Photos et descriptions"
+      },
+      "location": {
+        "title": "Localisation"
+      },
+      "search-bar": {
+        "label": "Chercher une station..."
+      }
+    },
+    "intervention-form": {
+      "cancel": "annuler",
+      "apply": "appliquer",
+      "confirm-intervention": "confirmer",
+      "label": "Formulaire d'intervention",
+      "selected-technician": "Technicien en charge",
+      "allocated-timespan": "Durée de l'opération",
+      "problems-to-solve": "Dysfonctionnements signalés",
+      "comment-instruction": "Commentaire et description",
+      "date-picker-tooltip": "Pour selectionner la durée de l'opération : cliquez sur la date de début puis celle de fin. Merci d'octroyer une durée en conséquence de la difficulté de l'intervention.",
+      "errors": {
+        "select-technician": {
+          "required": "Ce champ est requis"
+        },
+        "description": {
+          "required": "Il est fortement conseillé de laisser un commentaire.",
+          "minlength": "Le commentaire doit contenir au moins 10 caractères."
+        }
+      },
+      "snackbar": {
+        "success": "Intervention créée avec succès ! Elle a été transmise au technicien concerné."
+      }
+    }
+  },
+  "incident-types": {
+    "flat-tire": "Pneu crevé",
+    "brakes-malfunction": "Freins défectueux",
+    "saddle-malfunction": "Selle défectueuse",
+    "saddle-missing": "Absence de selle",
+    "battery-malfunction": "Batterie défectueuse",
+    "chain-malfunction": "Chaine défectueuse",
+    "handlebar-malfunction": "Guidon défectueux",
+    "lights-malfunction": "Phares défectueux",
+    "bike-lock-malfunction": "Antivol défectueux",
+    "bike-lock-missing": "Absence d'antivol",
+    "connexion-error": "Problème de réseaux",
+    "paiment-error": "Problème de paiement",
+    "screen-malfunction": "Écran défectueux",
+    "stand-vandalism": "Vandalisme (station)",
+    "stand-lock-malfunction": "Arceau défectueux",
+    "bike-vandalism": "Vandalisme (vélo)"
+  },
+  "map-view": {
+    "bottom-sheet": {
+      "default-table": {
+        "property": "Propriété",
+        "value": "Valeur"
+      },
+      "box-selection-table": {
+        "name": "Station",
+        "address": "Adresse"
+      }
+    }
+  },
+  "unauthorized-access": {
+    "title": "Vous n'avez pas l'habilitation pour accèder à cette page",
+    "btn": "Retour"
+  },
+
+  "widgets": {
+    "search-features": "Rechercher une entité...",
+    "measure": {
+      "length": {
+        "before-drawing": "Cliquer pour démarrer la mesure",
+        "during-drawing": "Double-cliquer pour arrêter la mesure"
+      },
+      "area": {
+        "before-drawing": "Cliquer pour démarrer le calcul de surface",
+        "during-drawing": "Double-cliquer pour arrêter le calcul de surface"
+      }
+    }
+  }
+}

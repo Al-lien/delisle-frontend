@@ -1,0 +1,12 @@
+<button
+  class="ngx-wxc-button-cancel"
+  color="accent"
+  mat-raised-button
+  [ariaLabel]="ariaLabel"
+  [disabled]="disabled"
+  (click)="onCancel()"
+  type="button"
+>
+  <ng-content></ng-content>
+  {{ label }}
+</button>

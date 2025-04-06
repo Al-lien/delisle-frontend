@@ -1,0 +1,43 @@
+<ngx-wxc-app-header
+  [title]="'interventions[name]' | translate : { name: fullname }"
+></ngx-wxc-app-header>
+
+<main>
+  <!--  LOADING SPINNER  -->
+  @if(isLoading() ){
+  <div class="spinner_container">
+    <mat-spinner></mat-spinner>
+    <p>{{ "backoffice-card.loading-spinner" | translate }}</p>
+  </div>
+  }
+  <!--  LIST OF ASSIGNED INTERVENTIONS  -->
+  @else {
+  <!--  IF EMPTY  -->
+  @if(displayedIntervention.length === 0){
+  <h3>Aucune intervention ne vous a été attribué.</h3>
+  }
+  <!--  ASYNCHRONOUS LIST  -->
+  @else {
+  <cdk-virtual-scroll-viewport
+    *ngIf="displayedIntervention.length !== 0"
+    itemSize="130"
+    class="cdk_scroll_viewport"
+  >
+    <ng-container *cdkVirtualFor="let item of displayedIntervention">
+      <ngx-wxc-station-card
+        *ngIf="item"
+        [item]="item"
+        [displayReport]="displayReport"
+        [selectedItem]="selectedIntervention"
+        [attributeOfSelection]="selectedIntervention()?.id"
+        [activeStyle]="false"
+        (onSelected)="openIntervention(item.id)"
+      ></ngx-wxc-station-card>
+
+      <p *ngIf="!item">
+        {{ "backoffice-card.loading-spinner" | translate }}
+      </p>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+  } }
+</main>

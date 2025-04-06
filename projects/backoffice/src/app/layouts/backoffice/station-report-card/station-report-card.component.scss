@@ -1,0 +1,72 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: 8rem;
+  margin-block: 0.5rem;
+}
+
+.report_card {
+  width: 100%;
+  gap: 1.75rem;
+  margin-inline: auto;
+
+  &:hover button {
+    border: 1.5px solid var(--color-accent);
+  }
+
+  &_header {
+    height: 3rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+
+    mat-card-title {
+      font-size: 1rem;
+    }
+
+    mat-card-subtitle {
+      font-size: 0.75rem;
+    }
+  }
+
+  &_details {
+    font-size: 0.75rem;
+
+    &_value {
+      font-size: 0.75rem;
+    }
+  }
+
+  &_total_reports {
+    color: var(--color-accent);
+  }
+
+  &_content {
+    padding: 0 0.5rem 0 0.5rem;
+    height: 2rem;
+  }
+
+  &_btn {
+    padding: 0;
+    margin: 0;
+    transform: scale(0.75);
+  }
+
+  &_icon {
+    transform: scale(0.95);
+  }
+}
+
+.inactive {
+  border: 1.5px solid transparent;
+  transition: all 0.25s;
+}
+
+.active {
+  border: 1.5px solid var(--color-accent);
+  transition: all 0.25s;
+}
+
+.mat-mdc-mini-fab:not(.mdc-fab--extended) {
+  --mdc-fab-small-container-shape: 10%;
+  --mdc-fab-small-container-color: transparent;
+  --mat-fab-small-foreground-color: var(--color-primary-dark);
+}

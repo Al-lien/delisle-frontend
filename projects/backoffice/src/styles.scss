@@ -1,0 +1,83 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+@import "../../ngx-wxc/src/lib/styles/index";
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+$customTheme-primary: mat.m2-define-palette($md-custom-primary);
+$customTheme-accent: mat.m2-define-palette($md-custom-accent);
+
+// The warn palette is optional (defaults to red).
+$customTheme-warn: mat.m2-define-palette($md-custom-warn);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$customTheme-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $customTheme-primary,
+      accent: $customTheme-accent,
+      warn: $customTheme-warn,
+    ),
+    typography: mat.m2-define-typography-config(),
+    density: 0,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($customTheme-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+// Variables CSS avec les couleurs du thème (utilisables par des composants externes par exemple)
+:root {
+  // Primary
+  --color-primary: #{$primary};
+  --color-primary-dark: #{$primary-dark};
+  // Accent
+  --color-accent: #{$accent};
+  --color-accent-variant: #{$accent-variant};
+  // Warn / Info / Background etc.
+  --color-success: #{$success};
+  --color-info: #{$info};
+  --color-neutral: #{$neutral};
+  --color-warn: #{$warn};
+
+  --color-background: #{$background};
+  --color-light-text: #{$light-text};
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

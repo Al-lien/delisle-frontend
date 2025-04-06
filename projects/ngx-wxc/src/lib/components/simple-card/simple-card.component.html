@@ -1,0 +1,20 @@
+<mat-card [appearance]="appearance">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  @if(img){
+  <img
+    *ngIf="img"
+    [ngClass]="getImageSize()"
+    [src]="getImage()"
+    alt="snapshot"
+  />
+  } @if(content){
+  <mat-card-content *ngIf="content">
+    <p>
+      {{ content }}
+    </p>
+  </mat-card-content>
+  }
+</mat-card>

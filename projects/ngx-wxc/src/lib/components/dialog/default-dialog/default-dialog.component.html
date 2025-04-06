@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>{{ title | translate }}</h2>
+<mat-divider></mat-divider>
+<mat-dialog-content class="mat-typography">
+  @for(message of content; track message){
+  {{ message | translate }}
+  <br />
+  }
+</mat-dialog-content>
+<br />
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close class="closebtn">
+    {{ close ?? "" | translate }}
+  </button>
+  <button mat-button [mat-dialog-close]="true" class="openbtn" cdkFocusInitial>
+    {{ actions ?? "" | translate }}
+  </button>
+</mat-dialog-actions>

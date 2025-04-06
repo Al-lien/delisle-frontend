@@ -1,0 +1,20 @@
+@use "@angular/material" as mat;
+@import "palettes";
+
+// COLORS
+$primary: mat.m2-get-color-from-palette($md-custom-primary, 500); //#415971
+$primary-dark: mat.m2-get-color-from-palette($md-custom-primary, 900); // #1c2e42
+
+$accent: mat.m2-get-color-from-palette($md-custom-accent, 500); // #e20612
+
+$success: mat.m2-get-color-from-palette($md-custom-success, 500); //#04ad00
+$info: mat.m2-get-color-from-palette($md-custom-primary, A700); //#0573ff
+$accent-variant: mat.m2-get-color-from-palette(
+  $md-custom-accent-variant,
+  500
+); //#fdad68
+$neutral: mat.m2-get-color-from-palette($md-custom-neutral, 900); //#5c626a
+$warn: mat.m2-get-color-from-palette($md-custom-warn, 500); //#b00020
+
+$background: mat.m2-get-color-from-palette($md-custom-background, 500); // #fcfcfd
+$light-text: #fcfcfd; // #fcfcfd

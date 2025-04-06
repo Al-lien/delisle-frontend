@@ -1,0 +1,9 @@
+<span matSnackBarLabel class="snackbar-label"
+  ><mat-icon>electric_bike</mat-icon>
+  <p>{{ data.message }}</p>
+</span>
+<span matSnackBarActions>
+  <button mat-button matSnackBarAction (click)="snackBarRef.dismiss()">
+    <mat-icon>{{ data.icon }}</mat-icon>
+  </button>
+</span>

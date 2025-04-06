@@ -1,0 +1,12 @@
+<button
+  class="ngx-wxc-button-submit"
+  color="primary"
+  mat-raised-button
+  type="submit"
+  [ariaLabel]="ariaLabel"
+  [disabled]="disabled"
+  (click)="onSubmit()"
+>
+  <ng-content></ng-content>
+  {{ label }}
+</button>

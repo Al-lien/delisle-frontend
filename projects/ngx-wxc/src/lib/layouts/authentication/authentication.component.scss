@@ -1,0 +1,74 @@
+:host {
+  display: flex;
+  margin-inline: auto;
+  height: 100%;
+  width: clamp(410px, 60%, 630px);
+}
+
+.register_form_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-block: 1rem;
+
+  &_btn_container {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      flex-basis: 46%;
+    }
+  }
+
+  > .mat-divider {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.login_form_btn_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+p.no-account-yet {
+  text-align: center;
+
+  > button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: var(--color-info);
+  }
+}
+
+.span_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .mat-divider,
+  span {
+    flex-basis: 30%;
+  }
+
+  span {
+    text-align: center;
+  }
+}
+
+mat-tab-group.mat-mdc-tab-group {
+  height: calc(100% - var(--mat-toolbar-mobile-height));
+  margin-top: var(--mat-toolbar-mobile-height);
+  gap: 1rem;
+}
+
+@media (width > 599px) {
+  mat-tab-group.mat-mdc-tab-group {
+    height: calc(100% - var(--mat-toolbar-standard-height));
+    margin-top: var(--mat-toolbar-standard-height);
+  }
+}

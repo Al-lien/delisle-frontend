@@ -1,0 +1,60 @@
+.app-dialog,
+.app-dialog-error {
+  --mat-dialog-container-max-width: 80vw !important;
+  --mat-dialog-container-min-width: 30vw !important;
+  --mat-dialog-actions-padding: 1rem !important;
+
+  height: max-content;
+
+  mat-divider {
+    width: 90%;
+    margin-right: auto;
+    --mat-divider-color: var(--color-primary);
+    --mat-divider-width: 1px;
+  }
+
+  .mat-mdc-dialog-actions {
+    padding: 0 1rem 0 0;
+    --mat-dialog-actions-alignment: end;
+  }
+
+  .openbtn {
+    --mdc-text-button-label-text-color: var(--color-light-text);
+  }
+}
+
+.app-dialog .openbtn {
+  background-color: var(--color-primary);
+}
+
+.app-dialog-error .openbtn {
+  background-color: var(--color-accent);
+}
+
+/* 
+  --mdc-dialog-subhead-font: Roboto, sans-serif;
+  --mdc-dialog-subhead-line-height: 32px;
+  --mdc-dialog-subhead-size: 20px;
+  --mdc-dialog-subhead-weight: 500;
+  --mdc-dialog-subhead-tracking: 0.0125em;
+  --mdc-dialog-supporting-text-font: Roboto, sans-serif;
+  --mdc-dialog-supporting-text-line-height: 24px;
+  --mdc-dialog-supporting-text-size: 16px;
+  --mdc-dialog-supporting-text-weight: 400;
+  --mdc-dialog-supporting-text-tracking: 0.03125em;
+
+  --mdc-dialog-container-color: white;
+  --mdc-dialog-subhead-color: rgba(0, 0, 0, 0.87);
+  --mdc-dialog-supporting-text-color: rgba(0, 0, 0, 0.6);
+
+  --mdc-dialog-container-shape: 4px;
+  --mat-dialog-container-elevation-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  --mat-dialog-container-max-width: 80vw;
+  --mat-dialog-container-small-max-width: 80vw;
+  --mat-dialog-container-min-width: 0;
+  --mat-dialog-actions-alignment: start;
+  --mat-dialog-actions-padding: 8px;
+  --mat-dialog-content-padding: 20px 24px;
+  --mat-dialog-headline-padding: 0 24px 9px;
+
+*/

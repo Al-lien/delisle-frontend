@@ -1,0 +1,14 @@
+.select {
+  &_form_field {
+    padding: 0;
+  }
+
+  &_label {
+    display: flex;
+
+    &_icon {
+      transform: scale(1.25);
+      margin-inline: 0.25rem;
+    }
+  }
+}

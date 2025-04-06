@@ -1,0 +1,24 @@
+mat-form-field {
+  width: 100% !important;
+  padding-block: 0.5rem;
+  --mat-form-field-container-height: 64px;
+  --mat-form-field-filled-with-label-container-padding-top: 24px;
+  --mat-form-field-subscript-text-line-height: 0;
+}
+
+.autocomplete_form {
+  min-width: 100%;
+
+  div.mat-mdc-form-field-subscript-wrapper.mat-mdc-form-field-bottom-align {
+    height: 0;
+  }
+
+  .mdc-text-field {
+    border-radius: var(--mdc-filled-text-field-container-shape) !important;
+  }
+}
+
+mat-icon {
+  line-height: initial !important;
+  vertical-align: sub !important;
+}

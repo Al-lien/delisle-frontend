@@ -1,0 +1,209 @@
+{
+  "username": "username",
+  "password": "password",
+  "register": "Register",
+  "connect": "login",
+  "login": "Log in",
+  "activate-account": "Activate your account",
+  "no-account-yet": "Don't have an account yet ?",
+  "google": "Google",
+  "facebook": "Facebook",
+  "apple": "Apple",
+  "dialog": {
+    "title": "My Title",
+    "content": "lorem ipsum",
+    "close": "cancel",
+    "actions": "confirm"
+  },
+  "user-form": {
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "email": "Email",
+    "password": "Password",
+    "repeat-password": "Repeat password",
+    "register": "Sign in",
+    "go-back": "Go back",
+    "remember-me": "Remember me",
+    "connect-with": "Or connect with"
+  },
+  "user-form-errors": {
+    "firstname": {
+      "required": "Please enter a firstname.",
+      "min-length": "Firstname must be at least 2 characters."
+    },
+    "lastname": {
+      "required": "Please enter a lastname.",
+      "min-length": "Lastname must be at least 2 characters."
+    },
+    "email": {
+      "invalid-format": "Please enter a valid email.",
+      "required": "Email is required."
+    },
+    "password": {
+      "required": "Password is required.",
+      "match": "Passwords do not match.",
+      "must-have": "Password must contains at least :",
+      "length": "8 characters.",
+      "lowercase": "1 lowercase.",
+      "uppercase": "1 uppercase.",
+      "special": "1 special character (#!$%&@).",
+      "forgotten": "Password forgotten ?"
+    }
+  },
+  "user-form-aria": {
+    "login-tab": "Go to \"Login\" page",
+    "register-tab": "Go to \"Register\" page",
+    "google": "Login with Google",
+    "facebook": "Login with Facebook",
+    "apple": "Login with Apple",
+    "hide-show-password": "Show/hide password"
+  },
+  "account-activation": {
+    "success": {
+      "title": "Activation successfull !",
+      "description": "Your account has been activated",
+      "description-bis": "You must be logged in to make the most of the application.",
+      "description-ter": "An mostyly, enjoy ;) !",
+      "go-back": "Go back to login page"
+    },
+    "failure": {
+      "title": "Activation failed !",
+      "description": "Something happenned while activating the account...",
+      "resend": "Send a new code"
+    },
+    "code-input": {
+      "title": "Enter your activation code",
+      "description": "An activation code has been sent to the following email address :",
+      "resend-code": "Send a new code",
+      "cancel": "Cancel",
+      "loading": "Loading..."
+    },
+    "snackbar": {
+      "resend-code": "A new code was sent. Check your inbox !"
+    },
+    "cancel-dialog": {
+      "title": "Do you want to cancel ?",
+      "content": "If you cancel now, you'll be redirect to the home page et the account won't be created. Are your sure ?",
+      "close": "Stay on the page",
+      "actions": "Go back to homepage"
+    }
+  },
+  "intervention-card": {
+    "attribution-date": "Attribution date",
+    "deadline": "Deadline"
+  },
+  "report-card": {
+    "nbr-of-report": "Number of report",
+    "report": "report",
+    "reports": "reports",
+    "last-reports-date": "Last report"
+  },
+  "backoffice-card": {
+    "create-intervention-btn": "Create intervention",
+    "archive-intervention-btn": "Archive intervention",
+    "archive-intervention-details": {
+      "success": "Intervention successfuly archived !",
+      "error": "Archived intervention failed. Try again later...",
+      "not-found": "Something happened, we did not find the selected intervention...",
+      "confirm-dialog": {
+        "title": "Archive intervention",
+        "subtitle": "Are you sure ?",
+        "content": "You're about to archive an ongoing intervention. It will not be deleted from your database, but the related technician won't have access anymore. \n You'll be able to reactivate it later if you desire. Although, you'll have to assign it to a technician again.",
+        "close": "Cancel",
+        "actions": "Archive"
+      }
+    },
+    "fetch-station-empty": "No station found...",
+    "loading-spinner": "Loading...",
+    "request-report-error": "Request of the reports list failed. Try again later...",
+    "no-data": "No data available...",
+    "no-intervention": "No assigned intervention...",
+    "side-menu": {
+      "report": "Reported",
+      "assigned": "Assigned",
+      "pending": "Pending",
+      "map-view": "Map",
+      "logout": "Log out"
+    },
+    "sections": {
+      "chart": {
+        "title": "Reported problems"
+      },
+      "snapshot": {
+        "title": "Related pictures and descriptions"
+      },
+      "location": {
+        "title": "Location"
+      },
+      "search-bar": {
+        "label": "Search a station..."
+      }
+    },
+    "intervention-form": {
+      "cancel": "cancel",
+      "apply": "apply",
+      "confirm-intervention": "confirm intervention",
+      "label": "Intervention form",
+      "selected-technician": "Lead technician",
+      "allocated-timespan": "Allocated timespan",
+      "problems-to-solve": "Problems to solve",
+      "comment-instruction": "Comment and instructions",
+      "errors": {
+        "select-technician": {
+          "required": "Field required"
+        },
+        "description": {
+          "required": "It is strongly advised to leave a comment.",
+          "minlength": "Comment must be at least 10 characters."
+        }
+      },
+      "snackbar": {
+        "success": "Intervention successfuly created ! It was delivered to the specified technician."
+      }
+    }
+  },
+  "incident-types": {
+    "flat-tire": "Flat tire",
+    "brakes-malfunction": "Defective brakes",
+    "saddle-malfunction": "Defective saddle",
+    "saddle-missing": "Missing saddle",
+    "battery-malfunction": "Defective battery",
+    "chain-malfunction": "Defective chain",
+    "handlebar-malfunction": "Defective handlebar",
+    "lights-malfunction": "Defective lights",
+    "bike-lock-malfunction": "Defective bike lock",
+    "bike-lock-missing": "Bike lock missing",
+    "connexion-error": "Network error",
+    "paiment-error": "Paiment error",
+    "screen-malfunction": "Defective screen",
+    "stand-vandalism": "Vandalism (station)",
+    "stand-lock-malfunction": "Defective stand lock",
+    "bike-vandalism": "Vandalism (bike)"
+  },
+  "map-view": {
+    "bottom-sheet": {
+      "table": {
+        "property": "Property",
+        "value": "Value"
+      },
+      "box-selection-table": {
+        "name": "Station",
+        "address": "Address"
+      }
+    }
+  },
+  "unauthorized-access": "You're not authorized to access this page",
+  "widgets": {
+    "search-features": "Search features...",
+    "measure": {
+      "length": {
+        "before-drawing": "Click to start the measure",
+        "during-drawing": "Double-click to stop the mesure"
+      },
+      "area": {
+        "before-drawing": "Click to start the area measure",
+        "during-drawing": "Double-click to stop the area measure"
+      }
+    }
+  }
+}

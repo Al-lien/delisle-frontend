@@ -1,0 +1,12 @@
+<mat-slide-toggle
+  [formControl]="control"
+  [labelPosition]="labelPosition"
+  [required]="required"
+  >{{ label }}</mat-slide-toggle
+>
+
+@for(error of control.errors | keyvalue; track $index){
+<mat-error *ngIf="control.touched">
+  {{ getError(error.key) | async }}</mat-error
+>
+}

@@ -1,0 +1,54 @@
+.ol-viewport {
+  height: 100% !important;
+  border-radius: 10px !important;
+}
+
+.ol-info-tooltip {
+  position: relative;
+  display: inline-block;
+  background-color: rgb(from var(--color-primary-dark) r g b / 0.8);
+  color: var(--color-light-text);
+  border-radius: 4px;
+  padding: 5px;
+  left: 50%;
+  transform: translate(12%, 30%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.ol-tooltip {
+  position: relative;
+  background: rgb(from var(--color-primary-dark) r g b / 0.5);
+  border-radius: 4px;
+  color: var(--color-light-text);
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: default;
+  user-select: none;
+}
+.ol-tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.ol-tooltip-static {
+  background-color: var(--color-primary);
+  color: var(--color-light-text);
+  border: 1px solid white;
+}
+.ol-tooltip-measure:before,
+.ol-tooltip-static:before {
+  border-top: 6px solid rgb(from var(--color-primary-dark) r g b / 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.ol-tooltip-static:before {
+  border-top-color: var(--color-primary);
+}

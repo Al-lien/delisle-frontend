@@ -1,0 +1,22 @@
+<form class="autocomplete_form">
+  <mat-form-field class="autocomplete_form_field">
+    <mat-label>{{ label | translate }}</mat-label>
+    <input
+      class="search_input"
+      matInput
+      type="text"
+      [formControl]="searchControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="optionLabel"
+      (optionSelected)="onOptionSelected($event)"
+    >
+      @for (option of filteredOptions | async; track option) {
+      <mat-option [value]="option">{{ optionLabel(option) }}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

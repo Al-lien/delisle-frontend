@@ -1,0 +1,8 @@
+<div [formGroup]="group" class="toggle_container">
+  @for(control of getFormControlsArray(group); track $index){
+  <ngx-wxc-slide-toggle
+    [control]="control"
+    [label]="getControlNameFromFormControl(control) | translate"
+  ></ngx-wxc-slide-toggle>
+  }
+</div>

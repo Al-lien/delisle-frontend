@@ -1,0 +1,12 @@
+mat-toolbar.mat-toolbar {
+  > span {
+    margin-inline: auto;
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,18 @@
+<mat-card appearance="raised" class="snapshot">
+  <mat-card-header class="snapshot_header">
+    <img
+      mat-card-image
+      [src]="['data:image/png;base64', snapshot.snapshot]"
+      alt="Description"
+    />
+  </mat-card-header>
+  <mat-card-content class="snapshot_content">
+    <p
+      [matTooltip]="
+        snapshot.description.length > 50 ? snapshot.description : ''
+      "
+    >
+      {{ snapshot.description | truncate : 50 }}
+    </p>
+  </mat-card-content>
+</mat-card>

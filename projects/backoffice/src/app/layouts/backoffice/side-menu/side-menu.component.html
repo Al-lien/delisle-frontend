@@ -1,0 +1,29 @@
+<mat-nav-list class="nav_list">
+  <span>
+    @for (link of links; track link) {
+    <a
+      mat-list-item
+      matListItemTitle
+      [routerLink]="['./' + link.path]"
+      routerLinkActive="active-link"
+      ariaCurrentWhenActive="page"
+      >{{ link.label | translate }}
+      <mat-icon matListItemIcon routerLinkActive="active-link">{{
+        link.matIcon
+      }}</mat-icon>
+    </a>
+
+    }
+  </span>
+  <span>
+    <a
+      class="logout_link"
+      mat-list-item
+      matListItemTitle
+      ariaCurrentWhenActive="page"
+      (click)="onLogout()"
+      >{{ "backoffice-card.side-menu.logout" | translate }}
+      <mat-icon matListItemIcon>logout</mat-icon>
+    </a>
+  </span>
+</mat-nav-list>

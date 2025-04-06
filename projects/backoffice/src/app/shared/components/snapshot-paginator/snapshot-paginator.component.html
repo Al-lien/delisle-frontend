@@ -1,0 +1,17 @@
+<div class="snapshot_cards_container">
+  @for(snapshot of displayedSnapshots(); track $index){
+  <app-snapshot-card [snapshot]="snapshot"></app-snapshot-card>
+  }
+</div>
+
+<mat-paginator
+  class="paginator"
+  (page)="handlePageEvent($event)"
+  [length]="length"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="pageSizeOptions"
+  [showFirstLastButtons]="showFirstLastButtons"
+  [hidePageSize]="hidePageSize"
+  aria-label="Select page"
+></mat-paginator>

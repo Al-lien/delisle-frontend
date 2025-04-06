@@ -1,0 +1,32 @@
+mat-paginator {
+  padding-top: 0.5rem;
+}
+
+.mat-mdc-paginator-container {
+  --mat-paginator-container-size: 32px;
+}
+
+.mat-mdc-paginator-range-actions {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    padding: 0;
+  }
+
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    --mdc-icon-button-state-layer-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mat-mdc-paginator-navigation-previous {
+  margin-right: auto;
+}
+
+.mat-mdc-paginator-range-label {
+  display: none;
+}

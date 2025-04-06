@@ -1,0 +1,64 @@
+<form [ariaLabel]="'register' | translate">
+  <ngx-wxc-input-text
+    type="text"
+    [control]="firstnameControl"
+    [errorPath]="'user-form-errors.firstname'"
+    [label]="'user-form.firstname' | translate"
+    [placeholder]="'user-form.firstname' | translate"
+  ></ngx-wxc-input-text>
+
+  <ngx-wxc-input-text
+    type="text"
+    [control]="lastnameControl"
+    [errorPath]="'user-form-errors.lastname'"
+    [label]="'user-form.lastname' | translate"
+    [placeholder]="'user-form.lastname' | translate"
+  ></ngx-wxc-input-text>
+
+  <ngx-wxc-input-text
+    type="email"
+    [control]="emailControl"
+    [errorPath]="'user-form-errors.email'"
+    [label]="'user-form.email' | translate"
+    [placeholder]="'user-form.email' | translate"
+  ></ngx-wxc-input-text>
+
+  <ngx-wxc-input-password
+    [ariaLabel]="'user-form-aria.hide-show-password' | translate"
+    [control]="passwordControl"
+    [errorPath]="'user-form-errors.password'"
+    [label]="'user-form.password' | translate"
+    [placeholder]="'user-form.password' | translate"
+  ></ngx-wxc-input-password>
+
+  <ngx-wxc-password-check
+    [password]="getPasswordValue()"
+    [label]="'user-form-errors.password.must-have' | translate"
+    [lowerCase]="'user-form-errors.password.lowercase' | translate"
+    [upperCase]="'user-form-errors.password.uppercase' | translate"
+    [specialChar]="'user-form-errors.password.special' | translate"
+    [minLength]="'user-form-errors.password.length' | translate"
+    [minLengthValue]="8"
+  ></ngx-wxc-password-check>
+
+  <ngx-wxc-input-password
+    [ariaLabel]="'user-form-aria.hide-show-password' | translate"
+    [control]="confirmPasswordControl"
+    [label]="'user-form.repeat-password' | translate"
+    [placeholder]="'user-form.repeat-password' | translate"
+    [errorPath]="'user-form-errors.password'"
+  ></ngx-wxc-input-password>
+  @if (registerUserForm.hasError('match') && confirmPasswordControl.dirty) {
+  <mat-error>{{ "user-form-errors.password.match" | translate }}</mat-error>
+  }
+</form>
+
+<div class="register_form_footer">
+  <mat-divider></mat-divider>
+
+  <ngx-wxc-button-submit
+    [disabled]="registerUserForm && registerUserForm.invalid"
+    [label]="'user-form.register' | translate"
+    (btnClick)="onRegister()"
+  ></ngx-wxc-button-submit>
+</div>

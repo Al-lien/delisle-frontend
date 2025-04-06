@@ -1,0 +1,107 @@
+<!-- 👇 LOADING SPINNER 👇 -->
+@if(isLoading() ){
+<div class="spinner_container">
+  <mat-spinner></mat-spinner>
+  <p>{{ "backoffice-card.loading-spinner" | translate }}</p>
+</div>
+}
+<!-- 👆 LOADING SPINNER 👆 -->
+@else {
+<div
+  class="container left"
+  [ngClass]="{ full_size: operatedStation() !== null }"
+>
+  @if(operatedStation() === null) {
+
+  <ng-container>
+    <!-- TODO: trouver une solution pour faire apparaitre l'input même quand le tableau est vide -->
+
+    <ngx-wxc-search-bar
+      [label]="'backoffice-card.sections.search-bar.label' | translate"
+      [items]="stationReports()"
+      [selectedItem$]="selectedStation"
+      [attributeDisplay]="'name'"
+      [optionLabel]="displayStationName"
+      (filteredItems)="displayBikeStations($event)"
+    >
+    </ngx-wxc-search-bar>
+
+    <h2 *ngIf="displayedBikeStations.length === 0">
+      {{ "backoffice-card.no-data" | translate }}
+    </h2>
+
+    <!-- 👇 LIST OF REPORTS 👇 -->
+    <cdk-virtual-scroll-viewport
+      *ngIf="displayedBikeStations.length !== 0"
+      itemSize="130"
+      class="cdk_scroll_viewport"
+    >
+      <ng-container *cdkVirtualFor="let item of displayedBikeStations">
+        <ngx-wxc-station-card-provided
+          *ngIf="item"
+          [item]="item"
+          [selectedItem]="selectedStation"
+          [attributeOfSelection]="selectedStation()?.id"
+        ></ngx-wxc-station-card-provided>
+        <p *ngIf="!item">
+          {{ "backoffice-card.loading-spinner" | translate }}
+        </p>
+      </ng-container>
+    </cdk-virtual-scroll-viewport>
+    <!-- 👆 LIST OF REPORTS 👆 -->
+  </ng-container>
+  } @else {
+  <ng-container>
+    <app-backoffice-card>
+      <h2>{{ "backoffice-card.intervention-form.label" | translate }}</h2>
+      <app-intervention-form
+        [interventionForm]="interventionForm"
+        [technicians]="technicians"
+      ></app-intervention-form>
+      <div class="intervention_form_btn_container">
+        <ngx-wxc-button-cancel
+          [label]="'backoffice-card.intervention-form.cancel' | translate"
+          (btnClick)="cancel()"
+        ></ngx-wxc-button-cancel>
+        <ngx-wxc-button-submit
+          [disabled]="interventionForm.invalid"
+          [label]="
+            'backoffice-card.intervention-form.confirm-intervention' | translate
+          "
+          (btnClick)="onCreateIntervention()"
+        ></ngx-wxc-button-submit>
+      </div>
+    </app-backoffice-card>
+  </ng-container>
+  }
+</div>
+
+<mat-divider [vertical]="true"></mat-divider>
+<div class="container right">
+  <app-backoffice-card>
+    @if(displayedBikeStations.length === 0){
+    <div class="skel">
+      <div class="skeleton mat-elevation-z1" matRipple>
+        <p>{{ "backoffice-card.no-data" | translate }}</p>
+      </div>
+      <div class="skeleton mat-elevation-z1" matRipple>
+        <p>{{ "backoffice-card.no-data" | translate }}</p>
+      </div>
+      <div class="skeleton mat-elevation-z1" matRipple>
+        <p>{{ "backoffice-card.no-data" | translate }}</p>
+      </div>
+    </div>
+    } @else {
+    <ngx-wxc-card-header
+      [title]="selectedStation()?.name"
+      [subtitle]="selectedStation()?.commune"
+      [text]="selectedStation()?.address"
+      [labelBtn]="'backoffice-card.create-intervention-btn'"
+      (action)="openForm()"
+    >
+    </ngx-wxc-card-header>
+    <app-station-details></app-station-details>
+    }
+  </app-backoffice-card>
+</div>
+}

@@ -1,0 +1,66 @@
+@if(loginTab.isActive){
+<ngx-wxc-app-header [title]="'connect' | translate"></ngx-wxc-app-header>
+} @if(registerTab.isActive){
+<ngx-wxc-app-header [title]="'register' | translate"></ngx-wxc-app-header>
+}
+
+<mat-tab-group
+  animationDuration="500ms"
+  #authTabs
+  class="tab_group"
+  dynamicHeight="false"
+>
+  <mat-tab [label]="'login' | translate" #loginTab>
+    <ngx-wxc-app-login></ngx-wxc-app-login>
+
+    <div class="login_form_btn_container">
+      <p class="no-account-yet">
+        {{ "no-account-yet" | translate }}
+
+        <ngx-wxc-button-raised
+          [label]="'register' | translate"
+          (btnClick)="goToCreateAccountTab()"
+        ></ngx-wxc-button-raised>
+      </p>
+      <div class="span_container">
+        <mat-divider></mat-divider>
+        <span>{{ "user-form.connect-with" | translate }}</span>
+        <mat-divider></mat-divider>
+      </div>
+
+      <ngx-wxc-button-raised [color]="'info'" [label]="'google' | translate">
+        <img
+          src="../../../../assets/logo/google_logo.svg"
+          alt="Google logo"
+          width="15px"
+          height="15px"
+        />
+      </ngx-wxc-button-raised>
+
+      <ngx-wxc-button-raised [color]="'info'" [label]="'facebook' | translate">
+        <img
+          src="../../../../assets/logo/facebook_logo.svg"
+          alt="Facebook logo"
+          width="15px"
+          height="15px"
+        />
+      </ngx-wxc-button-raised>
+
+      <ngx-wxc-button-raised [color]="'info'" [label]="'apple' | translate">
+        <img
+          src="../../../../assets/logo/apple_logo.svg"
+          alt="Apple logo"
+          width="15px"
+          height="15px"
+        />
+      </ngx-wxc-button-raised>
+    </div>
+  </mat-tab>
+  <mat-tab
+    [label]="'register' | translate"
+    #registerTab
+    [ariaLabel]="'user-form-aria.register-tab' | translate"
+  >
+    <ngx-wxc-app-register></ngx-wxc-app-register>
+  </mat-tab>
+</mat-tab-group>

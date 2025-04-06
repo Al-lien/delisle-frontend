@@ -1,0 +1,13 @@
+<mat-sidenav-container class="sidenav_container">
+  <mat-sidenav
+    mode="side"
+    opened
+    class="sidenav_container_body"
+    [disableClose]="true"
+    ><app-side-menu (loggedOut)="logout()"
+  /></mat-sidenav>
+
+  <mat-sidenav-content class="sidenav_content">
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

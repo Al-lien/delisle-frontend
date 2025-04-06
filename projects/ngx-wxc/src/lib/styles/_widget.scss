@@ -1,0 +1,9 @@
+.mdc-fab.widget_button {
+  --mdc-fab-container-shape: 8px;
+}
+
+mat-icon.widget_icon {
+  transform: scale(1.75);
+  display: flex;
+  align-items: center;
+}

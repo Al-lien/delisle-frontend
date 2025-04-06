@@ -1,0 +1,17 @@
+mat-tab-nav-panel.mat-mdc-tab-nav-panel {
+  height: calc(
+    100vh - var(--mdc-secondary-navigation-tab-container-height)
+  ) !important;
+  display: flex;
+  flex-direction: column;
+}
+
+nav.mat-mdc-tab-nav-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+mat-icon.active-link {
+  color: var(--color-accent) !important;
+}

@@ -1,0 +1,26 @@
+<mat-form-field class="select_form_field" appearance="outline">
+  <mat-label *ngIf="!!label" class="select_label"
+    ><mat-icon *ngIf="!!matIcon" [inline]="true" class="select_label_icon">{{
+      matIcon
+    }}</mat-icon
+    >{{ label }}</mat-label
+  >
+
+  <mat-select
+    (selectionChange)="onSelectionChange()"
+    [formControl]="control"
+    [placeholder]="placeholder"
+    [required]="required"
+    id="type"
+  >
+    @for(val of values; track $index){
+    <mat-option [value]="val">{{ displayListValue(val) }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+@for(error of control.errors | keyvalue; track $index){
+<mat-error *ngIf="control.touched">
+  {{ getError(error.key) | async }}</mat-error
+>
+}

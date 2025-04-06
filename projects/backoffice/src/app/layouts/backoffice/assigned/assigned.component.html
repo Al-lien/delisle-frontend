@@ -1,0 +1,65 @@
+<!-- 👇 LOADING SPINNER 👇 -->
+@if(isLoading() ){
+<div class="spinner_container">
+  <mat-spinner></mat-spinner>
+  <p>{{ "backoffice-card.loading-spinner" | translate }}</p>
+</div>
+}
+<!-- 👆 LOADING SPINNER 👆 -->
+@else {
+<div class="container left">
+  <ng-container>
+    <ngx-wxc-search-bar
+      [label]="'backoffice-card.sections.search-bar.label' | translate"
+      [items]="interventions()"
+      [selectedItem$]="selectedIntervention"
+      [optionLabel]="displayStationName"
+      (filteredItems)="displayInterventions($event)"
+    ></ngx-wxc-search-bar>
+
+    <h2 *ngIf="displayedInterventions.length === 0">
+      {{ "backoffice-card.no-intervention" | translate }}
+    </h2>
+
+    <cdk-virtual-scroll-viewport
+      *ngIf="displayedInterventions.length !== 0"
+      itemSize="130"
+      class="cdk_scroll_viewport"
+    >
+      <ng-container *cdkVirtualFor="let item of displayedInterventions">
+        <app-station-card
+          *ngIf="item"
+          [item]="item"
+          [displayReport]="displayStationCard"
+          [selectedItem]="selectedIntervention"
+          [attributeOfSelection]="selectedIntervention()?.id"
+        ></app-station-card>
+
+        <p *ngIf="!item">
+          {{ "backoffice-card.loading-spinner" | translate }}
+        </p>
+      </ng-container>
+    </cdk-virtual-scroll-viewport>
+  </ng-container>
+</div>
+<mat-divider [vertical]="true"></mat-divider>
+<div class="container right">
+  <app-backoffice-card>
+    @if(displayedInterventions.length === 0){
+    <h1>{{ "backoffice-card.no-intervention" | translate }}</h1>
+    } @else {
+    <ngx-wxc-card-header
+      [title]="selectedIntervention()?.station?.name"
+      [text]="selectedIntervention()?.station?.address"
+      [subtitle]="selectedIntervention()?.station?.commune"
+      [labelBtn]="'backoffice-card.archive-intervention-btn'"
+      (action)="onArchiveIntervention(selectedIntervention())"
+    >
+    </ngx-wxc-card-header>
+    <app-intervention-details
+      [interventionForm]="interventionForm"
+    ></app-intervention-details>
+    }
+  </app-backoffice-card>
+</div>
+}

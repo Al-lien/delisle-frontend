@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+  height: 100vh;
+}
+
+main {
+  height: calc(100% - var(--mat-toolbar-mobile-height));
+  margin-block: calc(var(--mat-toolbar-mobile-height) + 5px);
+  padding-inline: 0.5rem;
+}
+
+.cdk_scroll_viewport {
+  height: 1500px;
+  min-width: 100%;
+}
+
+@media (width > 599px) {
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    height: calc(100% - var(--mat-toolbar-standard-height));
+    margin-block: var(--mat-toolbar-standard-height);
+  }
+
+  main {
+    padding: 0.5rem 0.5rem;
+  }
+}

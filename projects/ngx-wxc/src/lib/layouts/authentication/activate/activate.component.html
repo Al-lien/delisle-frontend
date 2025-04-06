@@ -1,0 +1,80 @@
+<!-- HEADER -->
+<header aria-label="En-tête">
+  <ngx-wxc-app-header
+    [title]="'activate-account' | translate"
+  ></ngx-wxc-app-header>
+</header>
+
+<!-- NOT SUBMITTED -->
+<div *ngIf="!submitted" class="body-container not-submitted">
+  <div class="activate_account_container">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="mark_email_unread"
+      color="primary"
+    ></mat-icon>
+    <h2>{{ "account-activation.code-input.title" | translate }}</h2>
+
+    <p>
+      {{ "account-activation.code-input.description" | translate }}
+    </p>
+    <code-input
+      #codeForm
+      (codeCompleted)="onCodeCompleted($event)"
+    ></code-input>
+
+    <!-- RESEND CODE BUTTON -->
+    <mat-hint align="end">
+      <ngx-wxc-button-raised
+        class="hint-button"
+        (btnClick)="onResendCode()"
+        [label]="'account-activation.code-input.resend-code' | translate"
+        [disabled]="isLoading"
+      ></ngx-wxc-button-raised>
+    </mat-hint>
+  </div>
+  <!-- CANCEL ACTIVATION BUTTON -->
+  <div class="cancel-container">
+    <ngx-wxc-button-cancel
+      [label]="'account-activation.code-input.cancel' | translate"
+      (btnClick)="onCancel()"
+    ></ngx-wxc-button-cancel>
+  </div>
+</div>
+
+<!-- SUBMITTED && CODE VALID -->
+<div *ngIf="submitted && codeValid" class="response_container submitted valid">
+  <h2>{{ "account-activation.success.title" | translate }}</h2>
+  <div class="response_container_text">
+    <p>{{ "account-activation.success.description" | translate }}</p>
+    <p>
+      {{ "account-activation.success.description-bis" | translate }}
+    </p>
+    <p>{{ "account-activation.success.description-ter" | translate }}</p>
+  </div>
+  <ngx-wxc-button-submit
+    (btnClick)="redirectToLogin()"
+    [label]="'account-activation.success.go-back' | translate"
+  ></ngx-wxc-button-submit>
+</div>
+
+<!-- SUBMITTED && CODE INVALID -->
+<div
+  *ngIf="submitted && !codeValid"
+  class="response_container submitted not-valid"
+>
+  <div class="response_container_text">
+    <p>{{ "account-activation.failure.description" | translate }}</p>
+  </div>
+  <ngx-wxc-button-submit
+    (btnClick)="submitted = false"
+    [label]="'account-activation.failure.resend' | translate"
+  ></ngx-wxc-button-submit>
+</div>
+
+<!-- LOADING SPINNER WHEN SUBMITTING -->
+<div *ngIf="isLoading" class="spinner_container activate_spinner submitting">
+  <mat-spinner></mat-spinner>
+  <p>{{ "account-activation.code-input.loading" | translate }}</p>
+</div>

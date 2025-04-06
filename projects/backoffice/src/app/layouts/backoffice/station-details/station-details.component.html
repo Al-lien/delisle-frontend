@@ -1,0 +1,29 @@
+<div class="details_section">
+  <h2>{{ "backoffice-card.sections.chart.title" | translate }}</h2>
+  <app-chart
+    [selectedItem$]="station"
+    [datasets]="initDatasets"
+    [title]="title"
+    [chartOptions]="chartOptions"
+  ></app-chart>
+</div>
+<div class="details_section">
+  <h2>{{ "backoffice-card.sections.snapshot.title" | translate }}</h2>
+  <app-snapshot-paginator
+    [selectedItem$]="station"
+    [pageSize]="5"
+    [pageSizeOptions]="[5]"
+    [showFirstLastButtons]="false"
+    [hidePageSize]="true"
+    [displaySnapshots]="displaySnapshots"
+  ></app-snapshot-paginator>
+</div>
+<div class="map_container details_section">
+  <h2>{{ "backoffice-card.sections.location.title" | translate }}</h2>
+  <app-map
+    id="ol-map"
+    [map]="map"
+    [selectedItem$]="station"
+    [displayCoordinates]="displayCoordinates"
+  ></app-map>
+</div>
